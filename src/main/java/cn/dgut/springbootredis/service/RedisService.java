@@ -21,14 +21,22 @@ public class RedisService {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
+
     public <T> void set(String key, T value, int expireTime) {
 
         ValueOperations<String, String> stringStringValueOperations = redisTemplate.opsForValue();
         stringStringValueOperations.set(key, JSON.toJSONString(value),expireTime, TimeUnit.SECONDS);
     }
+
+
     public Object get(String key,Class clazz){
 
         String value=redisTemplate.opsForValue().get(key);
         return JSON.parseObject(value,clazz);
+    }
+
+    public Object get(String key){
+
+        return redisTemplate.opsForValue().get(key);
     }
 }

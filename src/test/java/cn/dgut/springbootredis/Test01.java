@@ -34,4 +34,12 @@ public class Test01 {
     public void test2(){
        userService.getUserById(1);
     }
+
+    /**
+     * »º´æ¿Õ¶ÔÏó
+     */
+    @Test
+    public void test3(){
+        userService.getUserByIdWirhNull(2);
+    }
 }
