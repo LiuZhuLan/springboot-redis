@@ -20,4 +20,8 @@ public class UserController {
         log.info("操作数据库");
         return "user list";
     }
+
+    public void getNull(){
+
+    }
 }
