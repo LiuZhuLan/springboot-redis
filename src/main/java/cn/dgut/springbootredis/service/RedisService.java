@@ -35,7 +35,7 @@ public class RedisService {
         return JSON.parseObject(value,clazz);
     }
 
-    public Object get(String key){
+    public String get(String key){
 
         return redisTemplate.opsForValue().get(key);
     }
